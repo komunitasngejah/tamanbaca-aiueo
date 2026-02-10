@@ -3,23 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Taman Baca AIUEO | Komunitas Ngejah</title>
-  <meta name="description" content="Profil resmi Taman Baca AIUEO – Komunitas Ngejah. Ruang literasi, kreativitas, dan pembelajaran untuk semua." />
+  <title>Taman Baca AIUEO | Kampung Literasi Garut</title>
+  <meta name="description" content="Taman Baca AIUEO - Ruang literasi asri di Kp. Sukawangi, Garut. Membaca buku, mengkaji kehidupan bersama anak-anak dan masyarakat." />
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      /* Mengambil warna dari Logo */
-      --brand-green: #009e4f;  /* Hijau Daun */
-      --brand-orange: #f07e26; /* Oranye Buku/Matahari */
-      --brand-red: #e63946;    /* Merah Aksen */
+      --brand-green: #009e4f;
+      --brand-orange: #f07e26;
+      --brand-yellow: #facc15;
       --dark: #1e293b;
-      --light: #f0fdf4;        /* Hijau sangat muda untuk background */
+      --light: #f8fafc;
       --white: #ffffff;
-      --gray: #64748b;
+      --text-muted: #64748b;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,241 +31,281 @@
       overflow-x: hidden;
     }
 
-    /* --- Navigation --- */
+    /* --- Navigation (Glass Effect) --- */
     nav {
-      background: rgba(255, 255, 255, 0.9);
-      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.95);
       position: sticky;
       top: 0;
       z-index: 1000;
       box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      padding: 0.8rem 0;
     }
 
     nav .container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0.8rem 1.5rem;
+      padding: 0 1.5rem;
     }
 
-    .nav-logo-text {
-      font-weight: 700;
+    .nav-brand {
+      font-weight: 800;
       color: var(--brand-green);
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     nav ul {
       display: flex;
       list-style: none;
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     nav a {
       text-decoration: none;
       color: var(--dark);
-      font-weight: 500;
+      font-weight: 600;
       font-size: 0.95rem;
       transition: color 0.3s;
     }
 
-    nav a:hover {
-      color: var(--brand-orange);
-    }
+    nav a:hover { color: var(--brand-orange); }
 
-    /* --- Hero Section --- */
+    /* --- Hero Section (Kampung & Buku Vibe) --- */
     header {
-      background: linear-gradient(135deg, #ffffff 0%, #dcfce7 100%);
-      padding: 3rem 1.5rem;
-      min-height: 80vh;
+      /* Background Image: Suasana membaca di alam / pedesaan */
+      background: linear-gradient(rgba(0, 30, 10, 0.75), rgba(0, 30, 10, 0.6)), 
+                  url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed; /* Parallax effect */
+      min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      color: white;
+      padding: 2rem;
+      position: relative;
     }
 
     .hero-content {
       max-width: 900px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 2rem;
+      z-index: 2;
     }
 
-    /* Styling Logo Utama */
     .main-logo {
-      width: 280px;
-      max-width: 80%;
+      width: 250px;
+      max-width: 70%;
       height: auto;
-      filter: drop-shadow(0 10px 15px rgba(0, 158, 79, 0.2));
-      transition: transform 0.4s ease;
+      /* Background putih lingkaran agar logo terlihat jelas di background gelap */
+      background: rgba(255,255,255,0.9); 
+      border-radius: 50%;
+      padding: 15px;
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.2);
+      margin-bottom: 2rem;
+      animation: float 3s ease-in-out infinite;
     }
 
-    .main-logo:hover {
-      transform: scale(1.05) rotate(-2deg);
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
     }
 
     header h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-size: clamp(2.2rem, 5vw, 4rem);
       font-weight: 800;
-      color: var(--brand-green);
       line-height: 1.2;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     }
 
-    header h1 span {
-      color: var(--brand-orange);
-    }
+    header h1 span { color: var(--brand-orange); }
 
     header p {
-      max-width: 600px;
-      margin: 0 auto;
-      font-size: 1.1rem;
-      color: var(--gray);
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
     }
 
-    .btn-cta {
-      display: inline-block;
-      margin-top: 1.5rem;
+    .btn-hero {
       background: var(--brand-orange);
       color: white;
-      padding: 0.8rem 2rem;
+      padding: 1rem 2.5rem;
       border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      box-shadow: 0 4px 14px rgba(240, 126, 38, 0.4);
-      transition: all 0.3s ease;
+      font-weight: 700;
+      transition: all 0.3s;
+      display: inline-block;
+      border: 2px solid var(--brand-orange);
     }
 
-    .btn-cta:hover {
-      background: #d96a17;
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(240, 126, 38, 0.6);
+    .btn-hero:hover {
+      background: transparent;
+      color: var(--brand-orange);
+      background: white;
+      border-color: white;
     }
 
-    /* --- Sections General --- */
+    /* Wave Decoration */
+    .wave-bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
+    .wave-bottom svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 100px;
+    }
+
+    /* --- General Section --- */
     section {
       padding: 5rem 1.5rem;
-      max-width: 1100px;
+      max-width: 1200px;
       margin: auto;
     }
 
     section h2 {
       text-align: center;
-      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-size: clamp(2rem, 3vw, 2.5rem);
       margin-bottom: 3rem;
       color: var(--brand-green);
+    }
+
+    /* --- About Section (Split Layout) --- */
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-img {
       position: relative;
     }
-
-    section h2::after {
-      content: "";
-      width: 80px;
-      height: 5px;
-      background: var(--brand-orange);
-      display: block;
-      margin: 0.5rem auto 0;
-      border-radius: 5px;
+    
+    .about-img img {
+      width: 100%;
+      border-radius: 20px 20px 0 20px;
+      box-shadow: 20px 20px 0px var(--brand-orange);
     }
 
-    /* --- Grid Cards --- */
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--dark);
+    }
+
+    .quote {
+      border-left: 4px solid var(--brand-green);
+      padding-left: 1rem;
+      font-style: italic;
+      color: var(--text-muted);
+      margin-top: 1.5rem;
+    }
+
+    /* --- Program Cards --- */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem;
     }
 
     .card {
       background: white;
-      border-radius: 20px;
-      padding: 2.5rem 2rem;
-      box-shadow: 0 10px 40px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      border-top: 5px solid transparent;
+      border-radius: 16px;
+      padding: 2rem;
       text-align: center;
+      transition: transform 0.3s;
+      border: 1px solid #e2e8f0;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* Variasi Warna Border Card */
-    .card:nth-child(1) { border-top-color: var(--brand-green); }
-    .card:nth-child(2) { border-top-color: var(--brand-orange); }
-    .card:nth-child(3) { border-top-color: var(--brand-red); }
-    .card:nth-child(4) { border-top-color: var(--brand-green); }
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, var(--brand-green), var(--brand-orange));
+    }
 
     .card:hover {
       transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
     }
 
-    .card h3 {
-      margin-bottom: 1rem;
-      font-size: 1.35rem;
-      color: var(--dark);
-    }
-    
     .card-icon {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
-      display: block;
-    }
-
-    /* --- Visi Misi --- */
-    .visi-misi-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    
-    @media(min-width: 768px) {
-      .visi-misi-grid { grid-template-columns: 1fr 1fr; }
-    }
-
-    .card-list ul {
-      text-align: left;
-      padding-left: 1.5rem;
-      color: var(--gray);
-    }
-    
-    .card-list li { margin-bottom: 0.5rem; }
-
-    /* --- CTA Section --- */
-    .cta-container {
-      background: linear-gradient(135deg, var(--brand-green), #057a40);
-      border-radius: 30px;
-      padding: 4rem 2rem;
-      text-align: center;
-      color: white;
-      box-shadow: 0 20px 50px rgba(0, 158, 79, 0.3);
-    }
-
-    .cta-container h2 { color: white; }
-    .cta-container h2::after { background: white; }
-
-    .cta-container a {
-      background: white;
-      color: var(--brand-green);
-    }
-    .cta-container a:hover {
+      display: inline-block;
       background: #f0fdf4;
+      width: 80px;
+      height: 80px;
+      line-height: 80px;
+      border-radius: 50%;
     }
+
+    /* --- Photo Gallery (Anak & Buku) --- */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 3rem;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s;
+    }
+    .gallery-item img:hover { transform: scale(1.03); }
 
     /* --- Footer --- */
     footer {
       background: var(--dark);
-      color: #94a3b8;
+      color: white;
       text-align: center;
-      padding: 3rem 1.5rem;
-      margin-top: 4rem;
-      border-top: 5px solid var(--brand-orange);
+      padding: 4rem 1.5rem 2rem;
+      margin-top: 0;
+      position: relative;
     }
-    
-    footer strong { color: white; }
 
-    /* --- Mobile Menu --- */
-    @media (max-width: 600px) {
-      nav ul { display: none; } /* Sederhana untuk mobile: sembunyikan menu (opsional: tambahkan js untuk toggle) */
-      header { padding-top: 2rem; }
-      .main-logo { width: 220px; }
+    /* Gelombang pemisah footer */
+    .footer-wave {
+      position: absolute;
+      top: -100px;
+      left: 0;
+      width: 100%;
+      line-height: 0;
+    }
+    .footer-wave svg {
+      width: 100%;
+      height: 100px;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    @media (max-width: 768px) {
+      nav ul { display: none; }
+      header { padding-top: 4rem; }
+      .about-container { grid-template-columns: 1fr; }
+      .about-img img { box-shadow: 10px 10px 0px var(--brand-orange); }
     }
   </style>
 </head>
@@ -274,10 +313,13 @@
 
   <nav>
     <div class="container">
-      <a href="#" class="nav-logo-text">TBM AIUEO</a>
+      <a href="#" class="nav-brand">
+        TBM AIUEO
+      </a>
       <ul>
         <li><a href="#about">Tentang</a></li>
         <li><a href="#program">Program</a></li>
+        <li><a href="#galeri">Galeri</a></li>
         <li><a href="#kontak">Kontak</a></li>
       </ul>
     </div>
@@ -285,90 +327,110 @@
 
   <header id="home">
     <div class="hero-content">
-      <img src="https://github.com/komunitasngejah/tamanbaca-aiueo/blob/main/logo_tbm_aiueo.png" alt="Logo Taman Baca AIUEO" class="main-logo">
-      
-      <div class="text-content">
-        <h1>Membaca Teks, <br><span>Mengkaji Kehidupan</span></h1>
-        <p>
-          Bagian dari <strong>Komunitas Ngejah</strong>. Kami hadir di Kp. Sukawangi sebagai ruang tumbuh kembang kreativitas dan literasi masyarakat.
-        </p>
-        <a href="#program" class="btn-cta">Lihat Program Kami</a>
-      </div>
+      <img src="logo tbm aiueo.png" alt="Logo TBM AIUEO" class="main-logo">
+      <h1>Dari Kampung untuk <br><span>Peradaban Dunia</span></h1>
+      <p>
+        Menanamkan kecintaan pada buku di hati anak-anak Kp. Sukawangi.<br>
+        Ruang tumbuh, bermain, dan belajar yang asri.
+      </p>
+      <a href="#about" class="btn-hero">Jelajahi Taman Kami</a>
+    </div>
+
+    <div class="wave-bottom">
+      <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f8fafc"></path>
+      </svg>
     </div>
   </header>
 
   <section id="about">
-    <h2>Tentang Kami</h2>
-    <div style="text-align: center; max-width: 800px; margin: auto;">
-      <p style="font-size: 1.1rem; color: var(--gray);">
-        <strong>Taman Baca AIUEO</strong> bukan sekadar tempat membaca. Kami adalah inisiatif gerakan literasi dari Komunitas Ngejah yang bertujuan menumbuhkan minat baca, kecintaan belajar, serta kreativitas melalui pendekatan yang inklusif dan menyenangkan.
-      </p>
+    <div class="about-container">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Anak-anak belajar">
+      </div>
+      <div class="about-text">
+        <h4 style="color: var(--brand-orange); font-weight: 700;">TENTANG KAMI</h4>
+        <h3>Membaca Teks, Mengkaji Kehidupan</h3>
+        <p>
+          Taman Baca AIUEO adalah bagian dari <strong>Komunitas Ngejah</strong>. Terletak di Kp. Sukawangi, kami percaya bahwa buku adalah jendela, dan kampung halaman adalah sekolah kehidupan yang paling nyata.
+        </p>
+        <p class="quote">
+          "Kami tidak hanya mengajarkan cara mengeja huruf, tetapi bagaimana membaca makna di balik setiap peristiwa."
+        </p>
+      </div>
     </div>
   </section>
 
-  <section id="program">
-    <h2>Program Unggulan</h2>
+  <section id="program" style="background: white;">
+    <h2>Kegiatan di Kampung</h2>
     <div class="grid">
       <div class="card">
-        <span class="card-icon">📚</span>
+        <div class="card-icon">📖</div>
         <h3>Pojok Baca</h3>
-        <p>Akses gratis ke ribuan koleksi buku anak, remaja, dan umum dalam suasana yang nyaman dan asri.</p>
+        <p>Perpustakaan ramah anak dengan ribuan koleksi buku yang bebas diakses siapa saja.</p>
       </div>
       <div class="card">
-        <span class="card-icon">✏️</span>
-        <h3>Kelas Literasi</h3>
-        <p>Belajar membaca, menulis, dan bercerita (storytelling) dengan metode interaktif yang menyenangkan.</p>
+        <div class="card-icon">🎨</div>
+        <h3>Eksplorasi Kreatif</h3>
+        <p>Menggambar, mewarnai, dan membuat kerajinan tangan dari bahan alam sekitar.</p>
       </div>
       <div class="card">
-        <span class="card-icon">🤖</span>
-        <h3>Literasi Digital</h3>
-        <p>Pengenalan teknologi dan internet sehat untuk mempersiapkan generasi muda menghadapi era digital.</p>
+        <div class="card-icon">🌱</div>
+        <h3>Literasi Alam</h3>
+        <p>Belajar langsung dari alam, berkebun, dan menjaga lingkungan desa.</p>
       </div>
       <div class="card">
-        <span class="card-icon">🎨</span>
-        <h3>Ruang Kreatif</h3>
-        <p>Wadah berekspresi melalui menggambar, kerajinan tangan, diskusi buku, dan pentas seni sederhana.</p>
+        <div class="card-icon">🎭</div>
+        <h3>Pentas Seni</h3>
+        <p>Wadah ekspresi bakat anak-anak kampung dalam seni peran dan budaya.</p>
       </div>
     </div>
   </section>
 
-  <section id="visi">
-    <h2>Visi & Misi</h2>
-    <div class="grid visi-misi-grid">
-      <div class="card">
-        <h3>Visi</h3>
-        <p>Menjadi pusat literasi komunitas yang menumbuhkan generasi pembelajar, kritis, mandiri dan berkarakter.</p>
+  <section id="galeri">
+    <h2>Wajah Ceria Literasi</h2>
+    <p style="text-align: center; max-width: 600px; margin: auto; color: var(--text-muted);">
+      Momen kebersamaan, tawa, dan keseriusan anak-anak saat menyelami dunia imajinasi melalui buku.
+    </p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Teman membaca">
       </div>
-      <div class="card card-list">
-        <h3>Misi</h3>
-        <ul>
-          <li>Menyediakan akses bacaan yang mudah dan gratis bagi warga.</li>
-          <li>Mendorong budaya baca dan belajar sepanjang hayat.</li>
-          <li>Mengembangkan potensi anak melalui kegiatan kreatif.</li>
-          <li>Memperkuat kolaborasi gotong royong dalam komunitas.</li>
-        </ul>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Buku di alam">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Diskusi kelompok">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rak buku">
       </div>
     </div>
   </section>
 
-  <section id="kontak">
-    <div class="cta-container">
-      <h2>Mari Bergabung!</h2>
-      <p style="margin: 1.5rem auto; max-width: 600px;">
-        Pintu kami selalu terbuka untuk relawan, donasi buku, dan kolaborasi kegiatan. Mari bersama-sama mencerdaskan kehidupan bangsa dari desa.
+  <footer id="kontak">
+    <div class="footer-wave">
+       <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="#1e293b"></path>
+      </svg>
+    </div>
+
+    <div class="footer-content">
+      <h2 style="color: white; margin-bottom: 1rem;">Mari Berkunjung!</h2>
+      <p style="margin-bottom: 2rem;">
+        Pintu kami di Kp. Sukawangi selalu terbuka. Mari berkolaborasi atau sekadar menyapa adik-adik pembaca.
       </p>
-      <a href="https://www.komunitasngejah.web.id" target="_blank" class="btn-cta">Kunjungi Website Komunitas</a>
+      
+      <a href="https://www.komunitasngejah.web.id" target="_blank" class="btn-hero" style="background: white; color: var(--dark); border: none;">Kunjungi Website Komunitas</a>
+      
+      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+        <img src="logo tbm aiueo.png" alt="Logo footer" style="height: 40px; margin-bottom: 10px; opacity: 0.8; filter: brightness(0) invert(1);">
+        <p style="font-size: 0.9rem; opacity: 0.6;">
+          © 2026 Taman Baca AIUEO - Komunitas Ngejah.<br>
+          Kp. Sukawangi, Desa Sukawangi, Kec. Singajaya, Kab. Garut
+        </p>
+      </div>
     </div>
-  </section>
-
-  <footer>
-    <div style="margin-bottom: 1rem;">
-      <img src="logo tbm aiueo.png" alt="Logo Kecil" style="height: 50px; opacity: 0.8;">
-    </div>
-    <p><strong>Taman Baca AIUEO</strong><br>
-    Kp. Sukawangi Ds. Sukawangi, Kec. Singajaya, Kab. Garut</p>
-    <br>
-    <p style="font-size: 0.85rem;">© 2026 Komunitas Ngejah. Dibuat dengan semangat literasi.</p>
   </footer>
 
 </body>
